@@ -13,13 +13,13 @@ class PetTypesContainer extends React.Component {
     return (
       <div>
         <PetTypeInput />
-        <PetTypes />
+        <PetTypes pet_types={this.props.pet_types} />
       </div>
     );
   }
 }
 const mapStateToProps = (state) => {
-  //state from the redux store
+  //state from the redux store for inside this component
   return {
     pet_types: state.pet_types,
   };
