@@ -2,8 +2,13 @@
 // takes in a state, (prev state) as the first argument then an action obj as the second
 //inside we update acording to the action type
 
-export default function petTypeReducer(state = { petTypes: [] }, action) {
+export default function petTypeReducer(state = { pet_types: [] }, action) {
   //easier to keep state as an obj
-
-  return state;
+  //   debugger;
+  switch (action.type) {
+    case "FETCH_PET_TYPES":
+      return { pet_types: action.payload };
+    default:
+      return state;
+  }
 }
