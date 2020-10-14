@@ -7,7 +7,7 @@ export default function petTypeReducer(state = { pet_types: [] }, action) {
   //   debugger;
   switch (action.type) {
     case "FETCH_PET_TYPES":
-      return { pet_types: action.payload };
+      return { pet_types: action.payload }; //action.payload is the array of obj
     default:
       return state;
   }

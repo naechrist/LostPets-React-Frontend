@@ -13,6 +13,8 @@ class PetTypesContainer extends React.Component {
     return (
       <div>
         <PetTypeInput />
+        <br />
+        <br />
         <PetTypes pet_types={this.props.pet_types} />
       </div>
     );
