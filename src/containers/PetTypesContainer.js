@@ -1,9 +1,9 @@
 import React from "react";
-import PetTypes from "../components/PetTypes";
-import PetTypeInput from "../components/PetTypeInput";
 import { connect } from "react-redux";
 import { fetchPetTypes } from "../actions/fetchPetTypes";
 import { Route } from "react-router-dom";
+import PetTypes from "../components/PetTypes";
+import PetTypeInput from "../components/PetTypeInput";
 import PetType from "../components/PetType";
 
 class PetTypesContainer extends React.Component {
@@ -14,11 +14,19 @@ class PetTypesContainer extends React.Component {
   render() {
     return (
       <div>
-        <Route exact path="/pet_types/new" component={PetTypeInput} />
+        <Route path="/pet_types/new" component={PetTypeInput} />
+        <Route
+          path="/pet_types/:id"
+          render={(routerProps) => (
+            <PetType {...routerProps} pet_types={this.props.pet_types} />
+          )}
+        />
         <Route
           exact
           path="/pet_types"
-          render={() => <PetTypes pet_types={this.props.pet_types} />}
+          render={(routerProps) => (
+            <PetTypes {...routerProps} pet_types={this.props.pet_types} />
+          )}
         />
       </div>
     );
