@@ -5,6 +5,7 @@ import { createStore, applyMiddleware, compose } from "redux"; // compose combin
 import thunk from "redux-thunk"; //for our async fetch requests, returns a function from the action creator
 import { Provider } from "react-redux"; //everything wraped in provider will have access to our redux store
 import petTypeReducer from "./reducers/petTypeReducer";
+import { BrowserRouter as Router } from "react-router-dom";
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose; //to c on the web page inspect
 
@@ -19,7 +20,9 @@ const store = createStore(
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
-      <App />
+      <Router>
+        <App />
+      </Router>
     </Provider>
   </React.StrictMode>,
   document.getElementById("root")

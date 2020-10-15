@@ -3,6 +3,8 @@ import PetTypes from "../components/PetTypes";
 import PetTypeInput from "../components/PetTypeInput";
 import { connect } from "react-redux";
 import { fetchPetTypes } from "../actions/fetchPetTypes";
+import { Route } from "react-router-dom";
+import PetType from "../components/PetType";
 
 class PetTypesContainer extends React.Component {
   componentDidMount() {
@@ -12,10 +14,12 @@ class PetTypesContainer extends React.Component {
   render() {
     return (
       <div>
-        <PetTypeInput />
-        <br />
-        <br />
-        <PetTypes pet_types={this.props.pet_types} />
+        <Route exact path="/pet_types/new" component={PetTypeInput} />
+        <Route
+          exact
+          path="/pet_types"
+          render={() => <PetTypes pet_types={this.props.pet_types} />}
+        />
       </div>
     );
   }

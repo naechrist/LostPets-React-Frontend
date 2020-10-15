@@ -14,6 +14,7 @@ export class PetTypeInput extends Component {
   handleOnSubmit = (event) => {
     event.preventDefault();
     this.props.addPetType(this.state);
+    this.setState({ name: "" });
   };
 
   render() {
