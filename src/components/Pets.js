@@ -8,7 +8,11 @@ const Pets = (props) => {
       {props.pets &&
         props.pets.map((pet) => (
           <div key={pet.id}>
-            {pet.location} <br /> {pet.name} <br /> {pet.description}
+            Location: {pet.location} <br /> Name: {pet.name} <br /> About:{" "}
+            {pet.description}
+            <br />
+            <br />
+            <br />
           </div>
         ))}
     </div>

@@ -17,8 +17,15 @@ export class PetInput extends Component {
   };
 
   handleOnSubmit = (event) => {
+    // debugger;
     event.preventDefault();
-    // addPet(this.state, pet_type.id);
+    this.props.addPet(this.state, this.props.pet_type.id);
+    this.setState({
+      description: "",
+      name: "",
+      location: "",
+      contact_number: "",
+    });
   };
 
   render() {
@@ -26,7 +33,7 @@ export class PetInput extends Component {
 
     return (
       <div>
-        <form>
+        <form onSubmit={this.handleOnSubmit}>
           <label>Found a Lost Friend? Add them below...</label>
           <br />
           <br />
@@ -78,4 +85,4 @@ export class PetInput extends Component {
   }
 }
 
-export default connect()(PetInput);
+export default connect(null, { addPet })(PetInput);
