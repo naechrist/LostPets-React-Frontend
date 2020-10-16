@@ -11,7 +11,7 @@ const PetType = (props) => {
         {/* {pet_type ? null : <Redirect to="/pet_types" />} */}
         {pet_type ? pet_type.name : null}
       </h1>
-      <PetsContainer />
+      <PetsContainer pet_type={pet_type} />
     </div>
   );
 };

@@ -6,8 +6,11 @@ export class PetsContainer extends Component {
   render() {
     return (
       <div>
-        <PetInput />
-        <Pets />
+        <PetInput pets={this.props.pet_type && this.props.pet_type.pets} />
+        <br />
+        <br />
+        <br />
+        <Pets pets={this.props.pet_type && this.props.pet_type.pets} />
       </div>
     );
   }
