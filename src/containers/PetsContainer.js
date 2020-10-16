@@ -6,7 +6,7 @@ export class PetsContainer extends Component {
   render() {
     return (
       <div>
-        <PetInput pets={this.props.pet_type && this.props.pet_type.pets} />
+        <PetInput pet_type={this.props.pet_type} />
         <br />
         <br />
         <br />
