@@ -19,6 +19,16 @@ export default function petTypeReducer(state = { pet_types: [] }, action) {
         }
       });
       return { ...state, pet_types: pet_types };
+    case "DELETE_PET":
+      debugger;
+      let pet_typesTwo = state.pet_types.map((pet_type) => {
+        if (pet_type.id === action.payload.id) {
+          return action.payload;
+        } else {
+          return pet_type;
+        }
+      });
+      return { ...state, pet_types: pet_typesTwo };
     default:
       return state;
   }
