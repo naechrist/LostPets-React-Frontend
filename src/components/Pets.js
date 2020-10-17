@@ -1,10 +1,17 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { deletePet } from "../actions/deletePet";
+import { PetEdit } from "./PetEdit";
+import { Route, Link } from "react-router-dom";
+
 //functional comonents bc we r getting props from the mom
 
 const Pets = (props) => {
   console.log(props.pets);
+
+  // const handleEdit = () => {
+
+  // };
 
   const handleDelete = (pet) => {
     props.deletePet(pet.id, pet.pet_type_id);
@@ -18,9 +25,18 @@ const Pets = (props) => {
             Location: {pet.location} <br /> Name: {pet.name} <br /> About:{" "}
             {pet.description} <br /> Contact Phone Number: {pet.contact_number}
             <br />
+            <Link
+              to={`/pet_types/${pet.pet_type_id}/pets/${pet.id}`}
+              onClick={<PetEdit />}
+            >
+              Click here to edit
+            </Link>
+            <br />
             <button onClick={() => handleDelete(pet)}>Found!</button>
             <br />
             Only hit Found when the animal is back home!
+            <br />
+            <br />
             <br />
           </div>
         ))}

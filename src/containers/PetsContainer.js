@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import PetInput from "../components/PetInput";
 import Pets from "../components/Pets";
+import PetEdit from "../components/PetEdit";
 
 export class PetsContainer extends Component {
   render() {

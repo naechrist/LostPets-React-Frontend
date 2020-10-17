@@ -2,6 +2,7 @@ import React from "react";
 import { Redirect } from "react-router-dom";
 import PetsContainer from "../containers/PetsContainer";
 
+
 const PetType = (props) => {
   // debugger;
   let pet_type = props.pet_types[props.match.params.id - 1];

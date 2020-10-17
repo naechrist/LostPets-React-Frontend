@@ -1,6 +1,5 @@
 export const addPet = (pet, petTypeId) => {
   return (dispatch) => {
-    // debugger;
     fetch(`http://localhost:3000/api/v1/pet_types/${petTypeId}/pets`, {
       method: "POST",
       headers: {
