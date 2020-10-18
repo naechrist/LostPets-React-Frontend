@@ -18,15 +18,11 @@ class NavBar extends React.Component {
             Type of Pets
           </NavLink>
         </li>
-        {/* <NavLink
-          to="/pet_types/:id"
-          render={(routerProps) => (
-            <PetType {...routerProps} pet_types={this.props.pet_types} />
-          )}
-        >
-          Click here to add a pet you found
-        </NavLink> */}
-        {/* <NavLink to="/" */}
+        <li>
+          <NavLink to="/pets" style={{ textDecoration: "none" }}>
+            All Lost Pets
+          </NavLink>
+        </li>
       </ul>
     );
   }

@@ -3,7 +3,7 @@ import { connect } from "react-redux"; //to connect to the store
 import { addPetType } from "../actions/addPetType";
 
 export class PetTypeInput extends Component {
-  state = { name: "" };
+  state = { name: "", searchString: [] };
 
   handleOnChange = (event) => {
     this.setState({
@@ -20,17 +20,19 @@ export class PetTypeInput extends Component {
   render() {
     return (
       <div>
-        <form onSubmit={this.handleOnSubmit}>
-          <label>Species not listed below? </label>
-          <input
-            type="text"
-            placeholder="Add Species"
-            value={this.state.name}
-            name="name"
-            onChange={this.handleOnChange}
-          ></input>
-          <input type="submit"></input>
-        </form>
+        <div>
+          <form onSubmit={this.handleOnSubmit}>
+            <label>Species not listed below? </label>
+            <input
+              type="text"
+              placeholder="Add Species"
+              value={this.state.name}
+              name="name"
+              onChange={this.handleOnChange}
+            ></input>
+            <input type="submit"></input>
+          </form>
+        </div>
       </div>
     );
   }

@@ -5,6 +5,7 @@ import PetTypeInput from "./PetTypeInput";
 
 const PetTypes = (props) => {
   console.log(props);
+
   return (
     <h1>
       <PetTypeInput />
