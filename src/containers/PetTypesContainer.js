@@ -6,6 +6,7 @@ import PetTypes from "../components/PetTypes";
 import PetTypeInput from "../components/PetTypeInput";
 import PetType from "../components/PetType";
 import Home from "../components/Home";
+import PetInput from "../components/PetInput";
 
 class PetTypesContainer extends React.Component {
   componentDidMount() {
@@ -27,11 +28,18 @@ class PetTypesContainer extends React.Component {
           />
           <Route path="/pet_types/new" component={PetTypeInput} />
           <Route
+            path="/pet_types/:id/new"
+            render={(routerProps) => (
+              <PetInput {...routerProps} pet_types={this.props.pet_types} />
+            )}
+          />
+          <Route
             path="/pet_types/:id"
             render={(routerProps) => (
               <PetType {...routerProps} pet_types={this.props.pet_types} />
             )}
           />
+
           <Route
             path="/pet_types"
             render={(routerProps) => (

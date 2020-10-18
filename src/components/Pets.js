@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { deletePet } from "../actions/deletePet";
 // import { PetEdit } from "./PetEdit";
 import { NavLink } from "react-router-dom";
+import PetInput from "./PetInput";
 
 //functional comonents bc we r getting props from the mom
 
@@ -12,9 +13,14 @@ const Pets = (props) => {
   const handleDelete = (pet) => {
     props.deletePet(pet.id, pet.pet_type_id);
   };
+  // debugger;
   return (
     <div>
-      <NavLink>d</NavLink>
+      {props.pets && (
+        <NavLink to={`/pet_types/${props.pets[0].pet_type_id}/new`}>
+          newnew
+        </NavLink>
+      )}
       {props.pets &&
         props.pets.map((pet) => (
           <section key={pet.id}>
