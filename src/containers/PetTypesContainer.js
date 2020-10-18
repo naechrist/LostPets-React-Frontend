@@ -5,6 +5,7 @@ import { Route, Switch } from "react-router-dom";
 import PetTypes from "../components/PetTypes";
 import PetTypeInput from "../components/PetTypeInput";
 import PetType from "../components/PetType";
+import Home from "../components/Home";
 
 class PetTypesContainer extends React.Component {
   componentDidMount() {
@@ -16,6 +17,14 @@ class PetTypesContainer extends React.Component {
       <div>
         <Switch>
           {/* chooses the first route that mathces the path */}
+          <Route
+            exact
+            path="/"
+            component={Home}
+            render={(routerProps) => (
+              <PetTypes {...routerProps} pet_types={this.props.pet_types} />
+            )}
+          />
           <Route path="/pet_types/new" component={PetTypeInput} />
           <Route
             path="/pet_types/:id"
@@ -24,7 +33,6 @@ class PetTypesContainer extends React.Component {
             )}
           />
           <Route
-            exact
             path="/pet_types"
             render={(routerProps) => (
               <PetTypes {...routerProps} pet_types={this.props.pet_types} />

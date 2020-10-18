@@ -1,13 +1,13 @@
 import React, { Component } from "react";
 import PetInput from "../components/PetInput";
 import Pets from "../components/Pets";
-import PetEdit from "../components/PetEdit";
+// import PetEdit from "../components/PetEdit";
 
 export class PetsContainer extends Component {
   render() {
     return (
       <div>
-        <PetInput pet_type={this.props.pet_type} />
+        {/* <PetInput pet_type={this.props.pet_type} /> */}
         <br />
         <br />
         <br />
