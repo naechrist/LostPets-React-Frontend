@@ -5,17 +5,24 @@ import PetTypeInput from "./PetTypeInput";
 
 const PetTypes = (props) => {
   console.log(props);
-
+  // debugger;
   return (
     <h1>
       <PetTypeInput />
-      {props.pet_types.map((pet_type) => (
-        <div key={pet_type.id}>
-          <NavLink to={`/pet_types/${pet_type.id}`}>{pet_type.name}</NavLink>
-          <br />
-          <br />
-        </div>
-      ))}
+      <br />
+      {props.pet_types &&
+        props.pet_types.map((pet_type) => (
+          <div key={pet_type.id}>
+            <NavLink
+              to={`/pet_types/${pet_type.id}`}
+              style={{ textDecoration: "none" }}
+            >
+              {pet_type.name}
+            </NavLink>
+            <br />
+            <br />
+          </div>
+        ))}
     </h1>
   );
 };

@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 
-import { fetchAllPets } from "../actions/fetchAllPets";
+// import { fetchAllPets } from "../actions/fetchAllPets";
 import { fetchPetTypes } from "../actions/fetchPetTypes";
 import { Route, Switch } from "react-router-dom";
 import PetTypes from "../components/PetTypes";
@@ -9,13 +9,12 @@ import PetTypeInput from "../components/PetTypeInput";
 import PetType from "../components/PetType";
 import Home from "../components/Home";
 import PetInput from "../components/PetInput";
-import AllPetsContainer from "./AllPetsContainer";
-import AllPets from "../components/AllPets";
+// import AllPetsContainer from "./AllPetsContainer";
+// import AllPets from "../components/AllPets";
 
 class PetTypesContainer extends React.Component {
   componentDidMount() {
     this.props.fetchPetTypes();
-    this.props.fetchAllPets();
   }
 
   render() {
@@ -43,13 +42,7 @@ class PetTypesContainer extends React.Component {
               <PetType {...routerProps} pet_types={this.props.pet_types} />
             )}
           />
-          <Route
-            exact
-            path="/pets"
-            render={(routerProps) => (
-              <AllPets {...routerProps} pet_types={this.props.pet_types} />
-            )}
-          />
+
           <Route
             path="/pet_types"
             render={(routerProps) => (
@@ -68,7 +61,5 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps, { fetchPetTypes, fetchAllPets })(
-  PetTypesContainer
-);
+export default connect(mapStateToProps, { fetchPetTypes })(PetTypesContainer);
 //connect calls dispatch mapState (first argument) to c it in the store & mapDispatch to update it (second argument)

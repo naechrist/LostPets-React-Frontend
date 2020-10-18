@@ -18,11 +18,6 @@ class NavBar extends React.Component {
             Type of Pets
           </NavLink>
         </li>
-        <li>
-          <NavLink to="/pets" style={{ textDecoration: "none" }}>
-            All Lost Pets
-          </NavLink>
-        </li>
       </ul>
     );
   }
