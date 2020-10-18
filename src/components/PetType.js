@@ -4,10 +4,10 @@ import PetsContainer from "../containers/PetsContainer";
 
 const PetType = (props) => {
   // debugger;
-  let pet_type = props.pet_types[props.match.params.id - 1];
-  // let pet_type = props.pet_types.filter(
-  //   (pet_type) => pet_type.id == props.match.params.id
-  // )[0];
+  // let pet_type = props.pet_types[props.match.params.id - 1];
+  let pet_type = props.pet_types.filter(
+    (pet_type) => pet_type.id == props.match.params.id
+  )[0];
 
   return (
     <div>

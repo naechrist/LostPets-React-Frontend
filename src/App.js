@@ -1,10 +1,7 @@
 import React from "react";
 import "./App.css";
-// import { connect } from "react-redux";
 import PetTypesContainer from "./containers/PetTypesContainer";
-// import Home from "./components/Home";
 import NavBar from "./components/NavBar";
-// import PetsContainer from "./containers/PetsContainer";
 
 class App extends React.Component {
   componentDidMount() {}
@@ -13,6 +10,8 @@ class App extends React.Component {
     return (
       <div className="App">
         <NavBar />
+        <br />
+        <br />
         <PetTypesContainer />
       </div>
     );

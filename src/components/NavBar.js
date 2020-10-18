@@ -1,12 +1,5 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import { connect } from "react-redux";
-import { fetchPetTypes } from "../actions/fetchPetTypes";
-import { Route, Switch } from "react-router-dom";
-import PetTypes from "../components/PetTypes";
-import PetTypeInput from "../components/PetTypeInput";
-import PetType from "../components/PetType";
-import Home from "../components/Home";
 
 class NavBar extends React.Component {
   // componentDidMount() {
@@ -14,9 +7,17 @@ class NavBar extends React.Component {
   // }
   render() {
     return (
-      <div>
-        <NavLink to="/">Home</NavLink>
-        <NavLink to="/pet_types">Types of Pet</NavLink>
+      <ul>
+        <li>
+          <NavLink to="/" style={{ textDecoration: "none" }}>
+            Home
+          </NavLink>
+        </li>
+        <li>
+          <NavLink to="/pet_types" style={{ textDecoration: "none" }}>
+            Type of Pets
+          </NavLink>
+        </li>
         {/* <NavLink
           to="/pet_types/:id"
           render={(routerProps) => (
@@ -26,7 +27,7 @@ class NavBar extends React.Component {
           Click here to add a pet you found
         </NavLink> */}
         {/* <NavLink to="/" */}
-      </div>
+      </ul>
     );
   }
 }

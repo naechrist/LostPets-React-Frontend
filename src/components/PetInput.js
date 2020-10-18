@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { addPet } from "../actions/addPet";
 
 export class PetInput extends Component {
+  // debugger;
   state = {
     description: "",
     name: "",
@@ -17,7 +18,7 @@ export class PetInput extends Component {
   };
 
   handleOnSubmit = (event) => {
-    // debugger;
+    debugger;
     event.preventDefault();
     this.props.addPet(this.state, this.props.pet_type.id);
     this.setState({

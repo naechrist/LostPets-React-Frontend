@@ -14,6 +14,7 @@ class PetTypesContainer extends React.Component {
   }
 
   render() {
+    // debugger;
     return (
       <div>
         <Switch>
@@ -29,9 +30,7 @@ class PetTypesContainer extends React.Component {
           <Route path="/pet_types/new" component={PetTypeInput} />
           <Route
             path="/pet_types/:id/new"
-            render={(routerProps) => (
-              <PetInput {...routerProps} pet_types={this.props.pet_types} />
-            )}
+            render={(routerProps) => <PetInput />}
           />
           <Route
             path="/pet_types/:id"
