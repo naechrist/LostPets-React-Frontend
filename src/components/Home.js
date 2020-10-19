@@ -1,9 +1,6 @@
 import React from "react";
-// import { NavLink } from "react-router-dom";
-// import PetTypes from "./PetTypes";
 
-const Home = (props) => {
-  //   debugger;
+const Home = () => {
   return (
     <article>
       <br />
@@ -13,9 +10,4 @@ const Home = (props) => {
     </article>
   );
 };
-
 export default Home;
-
-{
-  /* <NavLink to={`/pet_types/${pet_type.id}`}>{pet_type.name}</NavLink>; */
-}

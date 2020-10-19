@@ -4,7 +4,6 @@ import PetInput from "../components/PetInput";
 
 export class PetsContainer extends Component {
   render() {
-    // debugger;
     return (
       <div>
         <PetInput pet_type={this.props.pet_type} />

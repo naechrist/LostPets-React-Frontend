@@ -3,12 +3,12 @@ import { connect } from "react-redux";
 import { addPet } from "../actions/addPet";
 
 export class PetInput extends Component {
-  // debugger;
   state = {
     description: "",
     name: "",
     location: "",
     contact_number: "",
+    pet_type: "",
   };
 
   handleOnChange = (event) => {
@@ -18,7 +18,6 @@ export class PetInput extends Component {
   };
 
   handleOnSubmit = (event) => {
-    // debugger;
     event.preventDefault();
     this.props.addPet(this.state, this.props.pet_type.id);
     this.setState({
@@ -30,15 +29,20 @@ export class PetInput extends Component {
   };
 
   render() {
-    // console.log(this);
-
     return (
       <div>
         <form onSubmit={this.handleOnSubmit}>
           <label>Found a Lost Friend? Add them below...</label>
           <br />
           <br />
-          <label>Write a detailed description of the animal: </label>
+          <label>
+            Type: {this.props.pet_type && this.props.pet_type.name}
+            <br />
+          </label>
+          <label>
+            Write a detailed description of the{" "}
+            {this.props.pet_type && this.props.pet_type.name}:{" "}
+          </label>
           <textarea
             name="description"
             placeholder="Looks like. Acts like? Injured?"
@@ -85,5 +89,4 @@ export class PetInput extends Component {
     );
   }
 }
-
 export default connect(null, { addPet })(PetInput);

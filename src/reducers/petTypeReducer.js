@@ -4,7 +4,6 @@
 
 export default function petTypeReducer(state = { pet_types: [] }, action) {
   //easier to keep state as an obj
-  // debugger;
   switch (action.type) {
     case "FETCH_PET_TYPES":
       return { pet_types: action.payload }; //action.payload is the array of obj
@@ -12,10 +11,13 @@ export default function petTypeReducer(state = { pet_types: [] }, action) {
       return { ...state, pet_types: [...state.pet_types, action.payload] };
     case "ADD_PET":
       let pet_types = state.pet_types.map((pet_type) => {
+        //go through all types
         if (pet_type.id === action.payload.id) {
-          return action.payload;
+          //if the pet type id is the same as the id that is coming in in the payload
+          return action.payload; //replace b/c map creates a new array
         } else {
-          return pet_type;
+          //pet type w a new pet
+          return pet_type; //if it doesnt match just return what was already there the OG
         }
       });
       return { ...state, pet_types: pet_types };

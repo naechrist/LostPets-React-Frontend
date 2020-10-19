@@ -4,13 +4,12 @@ import React from "react";
 import PetTypeInput from "./PetTypeInput";
 
 const PetTypes = (props) => {
-  console.log(props);
-  // debugger;
+  //props coming from PetTypesContainer
   return (
     <h1>
       <PetTypeInput />
       <br />
-      {props.pet_types &&
+      {props.pet_types && //makes sure there is one first then map through them
         props.pet_types.map((pet_type) => (
           <div key={pet_type.id}>
             <NavLink

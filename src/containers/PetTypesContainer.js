@@ -1,7 +1,5 @@
 import React from "react";
 import { connect } from "react-redux";
-
-// import { fetchAllPets } from "../actions/fetchAllPets";
 import { fetchPetTypes } from "../actions/fetchPetTypes";
 import { Route, Switch } from "react-router-dom";
 import PetTypes from "../components/PetTypes";
@@ -9,16 +7,13 @@ import PetTypeInput from "../components/PetTypeInput";
 import PetType from "../components/PetType";
 import Home from "../components/Home";
 import PetInput from "../components/PetInput";
-// import AllPetsContainer from "./AllPetsContainer";
-// import AllPets from "../components/AllPets";
 
 class PetTypesContainer extends React.Component {
   componentDidMount() {
-    this.props.fetchPetTypes();
+    this.props.fetchPetTypes(); //for fetching data
   }
 
   render() {
-    // debugger;
     return (
       <div>
         <Switch>
@@ -42,7 +37,6 @@ class PetTypesContainer extends React.Component {
               <PetType {...routerProps} pet_types={this.props.pet_types} />
             )}
           />
-
           <Route
             path="/pet_types"
             render={(routerProps) => (

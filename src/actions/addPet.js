@@ -10,6 +10,7 @@ export const addPet = (pet, petTypeId) => {
       .then((resp) => resp.json())
       .then((pet_type) =>
         dispatch({
+          //saying go into the reducer w this action and update the store
           type: "ADD_PET",
           payload: pet_type,
         })
