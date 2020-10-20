@@ -8,6 +8,7 @@ const PetTypes = (props) => {
   return (
     <h1>
       <PetTypeInput />
+      ______________________________________________________________________________________________
       <br />
       {props.pet_types && //makes sure there is one first then map through them
         props.pet_types.map((pet_type) => (
