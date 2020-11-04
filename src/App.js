@@ -4,7 +4,7 @@ import PetTypesContainer from "./containers/PetTypesContainer";
 import NavBar from "./components/NavBar";
 
 class App extends React.Component {
-  componentDidMount() {}
+  // componentDidMount() {}
 
   render() {
     return (

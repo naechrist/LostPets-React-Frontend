@@ -1,14 +1,19 @@
 import React, { Component } from "react";
-import Pets from "../components/Pets";
+import { connect } from "react-redux";
+import { deletePet } from "../actions/deletePet";
 
 export class SearchPets extends Component {
   constructor() {
     super();
-    this.state = { search: [] };
+    this.state = { search: null };
     this.handleChange = this.handleChange.bind(this);
   }
+  handleDelete = (pet) => {
+    this.props.deletePet(pet.id, pet.pet_type_id);
+  };
 
   handleChange = (e) => {
+    e.preventDefault();
     let currentList = [];
     let newList = [];
     if (e.target.value !== "") {
@@ -22,11 +27,8 @@ export class SearchPets extends Component {
         const filter = e.target.value.toLowerCase();
         return lc.toString().includes(filter);
       });
-    } else {
-      newList = [this.props.pets];
     }
     this.setState({ filtered: newList });
-    // debugger;
   };
 
   render() {
@@ -49,6 +51,9 @@ export class SearchPets extends Component {
               {pet.contact_number}
               <br />
               <br />
+              <button onClick={() => this.handleDelete(pet)}>Found!</button>
+              <br />
+              Only hit Found when {pet.name} is back home!
             </section>
           ))}
         <br />
@@ -62,4 +67,4 @@ export class SearchPets extends Component {
   }
 }
 
-export default SearchPets;
+export default connect(null, { deletePet })(SearchPets);

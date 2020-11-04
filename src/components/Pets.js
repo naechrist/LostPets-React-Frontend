@@ -1,7 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
 import { deletePet } from "../actions/deletePet";
-import SearchPets from "../components/SearchPets";
 
 //functional comonents bc we r getting props from the dom
 
