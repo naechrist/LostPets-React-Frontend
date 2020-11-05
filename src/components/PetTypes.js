@@ -2,12 +2,18 @@
 import { NavLink } from "react-router-dom";
 import React from "react";
 import PetTypeInput from "./PetTypeInput";
+import SearchPetType from "./SearchPetType";
 
 const PetTypes = (props) => {
   //props coming from PetTypesContainer
+  const petTypes = props.pet_types;
+  console.log(petTypes);
   return (
     <h1>
       <PetTypeInput />
+      ______________________________________________________________________________________________
+      <br />
+      <SearchPetType pets={props.pet_types} />
       ______________________________________________________________________________________________
       <br />
       {props.pet_types && //makes sure there is one first then map through them
