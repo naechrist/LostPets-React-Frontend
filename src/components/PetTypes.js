@@ -11,18 +11,20 @@ const PetTypes = (props) => {
       ______________________________________________________________________________________________
       <br />
       {props.pet_types && //makes sure there is one first then map through them
-        props.pet_types.map((pet_type) => (
-          <div key={pet_type.id}>
-            <NavLink
-              to={`/pet_types/${pet_type.id}`}
-              style={{ textDecoration: "none" }}
-            >
-              {pet_type.name}
-            </NavLink>
-            <br />
-            <br />
-          </div>
-        ))}
+        props.pet_types
+          .sort((a, b) => (a.name > b.name ? 1 : -1))
+          .map((pet_type) => (
+            <div key={pet_type.id}>
+              <NavLink
+                to={`/pet_types/${pet_type.id}`}
+                style={{ textDecoration: "none" }}
+              >
+                {pet_type.name}
+              </NavLink>
+              <br />
+              <br />
+            </div>
+          ))}
     </h1>
   );
 };
