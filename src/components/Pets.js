@@ -11,7 +11,7 @@ const Pets = (props) => {
     props.deletePet(pet.id, pet.pet_type_id);
   };
   return (
-    <div>
+    <nav>
       {props.pets &&
         props.pets.map((pet) => (
           <section key={pet.id}>
@@ -27,7 +27,7 @@ const Pets = (props) => {
             <br />
           </section>
         ))}
-    </div>
+    </nav>
   );
 };
 export default connect(null, { deletePet })(Pets);
