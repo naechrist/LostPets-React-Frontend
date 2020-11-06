@@ -6,7 +6,7 @@ export class SearchPets extends Component {
   constructor() {
     super();
     this.state = { search: null };
-    this.handleChange = this.handleChange.bind(this);
+    // this.handleChange = this.handleChange.bind(this);
   }
   handleDelete = (pet) => {
     this.props.deletePet(pet.id, pet.pet_type_id);

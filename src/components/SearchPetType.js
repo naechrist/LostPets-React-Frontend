@@ -6,7 +6,7 @@ export class SearchPetType extends Component {
   constructor() {
     super();
     this.state = { search: null };
-    this.handleChange = this.handleChange.bind(this);
+    // this.handleChange = this.handleChange.bind(this);
   }
   handleChange = (e) => {
     e.preventDefault();

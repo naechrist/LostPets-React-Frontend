@@ -1,3 +1,4 @@
+//presentational component b/c we r just displaying content
 import React from "react";
 
 const Home = () => {

@@ -2,7 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import { deletePet } from "../actions/deletePet";
 
-//functional comonents bc we r getting props from the dom
+//functional comonents bc we r getting props from the dom also no render()
 
 const Pets = (props) => {
   console.log(props.pets);

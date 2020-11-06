@@ -10,6 +10,7 @@ import PetInput from "../components/PetInput";
 
 class PetTypesContainer extends React.Component {
   componentDidMount() {
+    //happens just after the render method
     this.props.fetchPetTypes(); //for fetching data
   }
 
@@ -18,14 +19,7 @@ class PetTypesContainer extends React.Component {
       <div>
         <Switch>
           {/* chooses the first route that mathces the path */}
-          <Route
-            exact
-            path="/"
-            component={Home}
-            render={(routerProps) => (
-              <PetTypes {...routerProps} pet_types={this.props.pet_types} />
-            )}
-          />
+          <Route exact path="/" component={Home} />
           <Route path="/pet_types/new" component={PetTypeInput} />
           <Route
             path="/pet_types/:id/new"

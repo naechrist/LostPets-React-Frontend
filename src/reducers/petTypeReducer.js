@@ -17,7 +17,7 @@ export default function petTypeReducer(state = { pet_types: [] }, action) {
           return action.payload; //replace b/c map creates a new array
         } else {
           //pet type w a new pet
-          return pet_type; //if it doesnt match just return what was already there the OG
+          return pet_type; //if it doesnt match just return what was already there, the OG
         }
       });
       return { ...state, pet_types: pet_types };

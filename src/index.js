@@ -19,7 +19,9 @@ const store = createStore(
 
 ReactDOM.render(
   <React.StrictMode>
-    <Provider store={store}> {/* everything wrapped in here will get access to the store*/}
+    <Provider store={store}>
+      {" "}
+      {/* everything wrapped in here will get access to the store*/}
       <Router>
         <App />
       </Router>
