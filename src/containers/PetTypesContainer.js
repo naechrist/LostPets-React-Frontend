@@ -10,7 +10,7 @@ import PetInput from "../components/PetInput";
 
 class PetTypesContainer extends React.Component {
   componentDidMount() {
-    //happens just after the render method
+    //happens just after the render method, so we call this
     this.props.fetchPetTypes(); //for fetching data
   }
 
@@ -21,21 +21,16 @@ class PetTypesContainer extends React.Component {
           {/* chooses the first route that mathces the path */}
           <Route exact path="/" component={Home} />
           <Route path="/pet_types/new" component={PetTypeInput} />
-          <Route
-            path="/pet_types/:id/new"
-            render={(routerProps) => <PetInput />}
-          />
+          <Route path="/pet_types/:id/new" component={PetInput} />
           <Route
             path="/pet_types/:id"
-            render={(routerProps) => (
-              <PetType {...routerProps} pet_types={this.props.pet_types} />
-            )}
+            render={(
+              routerProps //routerProps - gives us built in props like history, match (params), location
+            ) => <PetType {...routerProps} pet_types={this.props.pet_types} />}
           />
           <Route
             path="/pet_types"
-            render={(routerProps) => (
-              <PetTypes {...routerProps} pet_types={this.props.pet_types} />
-            )}
+            component={() => <PetTypes pet_types={this.props.pet_types} />}
           />
         </Switch>
       </div>
@@ -43,11 +38,11 @@ class PetTypesContainer extends React.Component {
   }
 }
 const mapStateToProps = (state) => {
-  //state from the redux store for inside this component
+  //making the state from the redux store -> props for inside this component
   return {
     pet_types: state.pet_types,
   };
 };
 
 export default connect(mapStateToProps, { fetchPetTypes })(PetTypesContainer);
-//connect calls dispatch mapState (first argument) to c it in the store & mapDispatch to update it (second argument)
+//connect calls dispatch mapState (first argument) to have access to the store & mapDispatch to update it (second argument)

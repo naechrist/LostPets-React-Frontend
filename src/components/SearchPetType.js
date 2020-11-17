@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import petTypeReducer from "../reducers/petTypeReducer";
 import { NavLink } from "react-router-dom";
 
 export class SearchPetType extends Component {

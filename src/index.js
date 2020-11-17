@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import App from "./App";
-import { createStore, applyMiddleware, compose } from "redux"; // compose combines multiple middlewares into one so we can just pass in that one middleware in the store argument
+import App from "./App"; // middleware below incorporates thunk w the store
+import { createStore, applyMiddleware, compose } from "redux"; // compose combines multiple middlewares into one so we can just pass in that one middleware in the store argument below
 import thunk from "redux-thunk"; //for our async fetch requests, returns a function from the action creator
 import { Provider } from "react-redux"; //everything wraped in provider will have access to our redux store
 import petTypeReducer from "./reducers/petTypeReducer";
@@ -20,12 +20,11 @@ const store = createStore(
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
-      {" "}
       {/* everything wrapped in here will get access to the store*/}
       <Router>
         <App />
       </Router>
     </Provider>
   </React.StrictMode>,
-  document.getElementById("root")
+  document.getElementById("root") //connects us to the SPA (html) 
 );
