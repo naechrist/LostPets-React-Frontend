@@ -1,8 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { deletePet } from "../actions/deletePet";
-
-//functional comonents bc we r getting props from the dom also no render()
+import FlagPet from "./FlagPet";
 
 const Pets = (props) => {
   console.log(props.pets);
@@ -25,6 +24,7 @@ const Pets = (props) => {
             <br />
             <br />
             <br />
+            <FlagPet />
           </section>
         ))}
     </nav>

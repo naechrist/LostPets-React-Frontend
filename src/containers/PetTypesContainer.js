@@ -10,23 +10,21 @@ import PetInput from "../components/PetInput";
 
 class PetTypesContainer extends React.Component {
   componentDidMount() {
-    //happens just after the render method, so we call this
-    this.props.fetchPetTypes(); //for fetching data
+    this.props.fetchPetTypes();
   }
 
   render() {
     return (
       <div>
         <Switch>
-          {/* chooses the first route that mathces the path */}
           <Route exact path="/" component={Home} />
           <Route path="/pet_types/new" component={PetTypeInput} />
           <Route path="/pet_types/:id/new" component={PetInput} />
           <Route
             path="/pet_types/:id"
-            render={(
-              routerProps //routerProps - gives us built in props like history, match (params), location
-            ) => <PetType {...routerProps} pet_types={this.props.pet_types} />}
+            render={(routerProps) => (
+              <PetType {...routerProps} pet_types={this.props.pet_types} />
+            )}
           />
           <Route
             path="/pet_types"
@@ -38,11 +36,9 @@ class PetTypesContainer extends React.Component {
   }
 }
 const mapStateToProps = (state) => {
-  //making the state from the redux store -> props for inside this component
   return {
     pet_types: state.pet_types,
   };
 };
 
 export default connect(mapStateToProps, { fetchPetTypes })(PetTypesContainer);
-//connect calls dispatch mapState (first argument) to have access to the store & mapDispatch to update it (second argument)
